@@ -26,3 +26,9 @@ The cluster in Databricks was a Serverless Pool where workers were Standard DS3 
 |---------|-------|-------|
 | Blob    | 108.6 | 168.6 |
 | Lake    | 25.0  | 220.2 |
+
+\* Without using `coalesce(1)` to combine onto a single csv file, the read is a lot faster (55.5 with Blob and 59.2 with Lake), but the result is around 40 individual csv files that would need to be combined with an additional step.
+
+** Without any kind of write and just collecting the content into a Spark DataFrame, the results were 35.8 with Blob and 43.7 with Lake.
+
+*** Overall, the exact results varied a bit between runs so to get a more accurate results, multiple runs should be performed and results given as averages
