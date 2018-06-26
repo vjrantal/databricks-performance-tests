@@ -35,11 +35,6 @@ The results are in seconds based on what is printed as the duration of the Stage
 | Saving as CSV with coalesce(1) | 126 | 180 |
 | Saving as CSV without coalesce | 5 | 7 |
 
-| Storage | Write | Read  |
-|---------|-------|-------|
-| Blob    | 108.6 | 168.6 |
-| Lake    | 25.0  | 220.2 |
-
 ## Observations
 
 * Using coalesce really kills the performance, because all data needs to be collected onto a single worker and written from there
